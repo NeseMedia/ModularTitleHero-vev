@@ -1,7 +1,38 @@
+/* 
+ * ModularTitleHero.module.css
+ * Updated with cloud animations and gradient background support
+ */
+
 .heroContainer {
   width: 100%;
   position: relative;
   overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+/* When wave is present, ensure content doesn't overflow */
+.hasBottomWave {
+  overflow: visible;
+}
+
+/* Bottom wave styling */
+.waveContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  line-height: 0;
+  transform: translateY(1px); /* Prevent gap between wave and next section */
+  z-index: 5;
+}
+
+.bottomWave {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .contentWrapper {
@@ -24,7 +55,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 0 2rem 0;
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 1.2;
   font-weight: 800;
 }
@@ -34,7 +65,8 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .titlePart.fromLeft {
@@ -63,6 +95,7 @@
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
   transition-delay: 0.2s;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .ingress.visible {
@@ -93,26 +126,56 @@
   height: 100%;
 }
 
+/* Animated clouds */
+.cloudsContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none; /* Ensure clouds don't interfere with interactions */
+}
+
+.cloud {
+  position: absolute;
+  animation-name: floatCloudRightToLeft;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.05));
+  will-change: transform; /* Performance optimization for animation */
+}
+
+@keyframes floatCloudRightToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-150vw); /* Move clouds completely off-screen to the left */
+  }
+}
+
 /* Responsive styles */
 @media (min-width: 768px) {
   .title {
-    font-size: 4rem;
+    font-size: 4.5rem;
   }
   
   .titleContainer {
-    width: 60%;
+    width: 70%;
   }
 }
 
 @media (min-width: 1024px) {
   .title {
-    font-size: 5rem;
+    font-size: 5.5rem;
   }
 }
 
 @media (max-width: 767px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
   
   .ingress {
@@ -121,5 +184,9 @@
   
   .contentWrapper {
     padding: 0 1rem;
+  }
+  
+  .heroContainer {
+    min-height: 400px;
   }
 }
