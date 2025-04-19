@@ -1,0 +1,186 @@
+{
+  "key": "GwLOVali0VvGi8N7Whr2",
+  "public": 0,
+  "admin": false,
+  "children": [
+    {
+      "widgetName": "Lars - Modular Title Hero",
+      "name": "Lars - Modular Title Hero",
+      "widgetId": "GwLOVali0VvGi8N7Whr2_ModularTitleHero",
+      "key": "GwLOVali0VvGi8N7Whr2_ModularTitleHero",
+      "pkg": "GwLOVali0VvGi8N7Whr2",
+      "formSchema": [
+        {
+          "name": "titlePart1",
+          "type": "string",
+          "title": "Tittel del 1",
+          "initialValue": "Denne tjenesten"
+        },
+        {
+          "name": "titlePart2",
+          "type": "string",
+          "title": "Tittel del 2",
+          "initialValue": "revolusjonerer"
+        },
+        {
+          "name": "titlePart3",
+          "type": "string",
+          "title": "Tittel del 3",
+          "initialValue": "reisehverdagen for bedrifter"
+        },
+        {
+          "name": "ingress",
+          "type": "string",
+          "title": "Ingress",
+          "options": {
+            "multiline": true
+          },
+          "initialValue": "For innkjøpsorganisasjonen Agrikjøp er god kontroll på forretningsreiser et viktig ansvar. Med nærmere 60.000 ansatte i medlemsbedrifter som Tine, Nortura og Felleskjøpet, blir det mange reiser å holde styr på."
+        },
+        {
+          "name": "heroImage",
+          "type": "image",
+          "title": "Hero-bilde"
+        },
+        {
+          "name": "animationDelay",
+          "type": "number",
+          "title": "Forsinkelse for animasjon (sekunder)",
+          "initialValue": 0.5
+        },
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "title": "Bakgrunnsfarge",
+          "initialValue": "#f8f9fa"
+        },
+        {
+          "name": "textColor",
+          "type": "string",
+          "title": "Tekstfarge",
+          "initialValue": "#333333"
+        },
+        {
+          "name": "accentColor",
+          "type": "string",
+          "title": "Aksentfarge (for tittel del 2)",
+          "initialValue": "#2563eb"
+        },
+        {
+          "name": "overlayOpacity",
+          "type": "number",
+          "title": "Opacity på overlay (0-1)",
+          "initialValue": 0.7,
+          "options": {
+            "min": 0,
+            "max": 1,
+            "step": 0.1
+          }
+        },
+        {
+          "name": "paddingTop",
+          "type": "number",
+          "title": "Padding Topp (px)",
+          "initialValue": 100
+        },
+        {
+          "name": "paddingBottom",
+          "type": "number",
+          "title": "Padding Bunn (px)",
+          "initialValue": 100
+        }
+      ],
+      "type": 1,
+      "widgetFuncName": "ModularTitleHero",
+      "categories": [
+        "Localhost"
+      ],
+      "size": [
+        3,
+        3
+      ],
+      "transform": {
+        "width": 100,
+        "height": 100
+      },
+      "metaData": [
+        {
+          "selector": ".heroContainer__ModularTitleHero",
+          "name": ""
+        },
+        {
+          "selector": ".contentWrapper__ModularTitleHero",
+          "name": ""
+        },
+        {
+          "selector": ".titleContainer__ModularTitleHero",
+          "name": ""
+        },
+        {
+          "selector": ".title__ModularTitleHero",
+          "name": ""
+        },
+        {
+          "selector": ".titlePart__ModularTitleHero",
+          "name": ""
+        },
+        {
+          "selector": ".ingress__ModularTitleHero",
+          "name": ""
+        },
+        {
+          "selector": ".imageContainer__ModularTitleHero",
+          "name": ""
+        }
+      ],
+      "editableCSScomputed": {
+        ".heroContainer__ModularTitleHero": {
+          "background": null
+        },
+        ".contentWrapper__ModularTitleHero": {
+          "max-width": "1200px",
+          "padding": "0 2rem"
+        },
+        ".titleContainer__ModularTitleHero": {
+          "padding": null,
+          "margin": null
+        },
+        ".title__ModularTitleHero": {
+          "font-family": null,
+          "font-size": "3rem",
+          "line-height": "1.2",
+          "margin": "0 0 2rem 0",
+          "display": "flex",
+          "font-weight": "800",
+          "font-style": null
+        },
+        ".titlePart__ModularTitleHero": {
+          "font-family": null,
+          "font-weight": null,
+          "margin-bottom": "0.25rem",
+          "font-style": null
+        },
+        ".ingress__ModularTitleHero": {
+          "font-family": null,
+          "font-size": "1.25rem",
+          "line-height": "1.6",
+          "margin": "0",
+          "max-width": "800px",
+          "font-weight": null,
+          "font-style": null
+        },
+        ".imageContainer__ModularTitleHero": {
+          "max-height": null,
+          "border-radius": null,
+          "overflow": null
+        }
+      },
+      "shareWithAccount": false,
+      "admin": false,
+      "content": "",
+      "updated": 1745072147626,
+      "created": 1745072147626
+    }
+  ],
+  "shareWithAccount": false
+}

@@ -1,0 +1,125 @@
+.heroContainer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.contentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 3;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 2rem 0;
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.titlePart {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-bottom: 0.25rem;
+}
+
+.titlePart.fromLeft {
+  transform: translateX(-50px);
+}
+
+.titlePart.fromRight {
+  transform: translateX(50px);
+}
+
+.titlePart.fromBottom {
+  transform: translateY(30px);
+}
+
+.titlePart.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.ingress {
+  max-width: 800px;
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+  transition-delay: 0.2s;
+}
+
+.ingress.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.imageContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .title {
+    font-size: 4rem;
+  }
+  
+  .titleContainer {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .ingress {
+    font-size: 1rem;
+  }
+  
+  .contentWrapper {
+    padding: 0 1rem;
+  }
+}
