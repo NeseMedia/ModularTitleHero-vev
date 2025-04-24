@@ -36,7 +36,8 @@
 }
 
 .contentWrapper {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
@@ -58,10 +59,16 @@
   font-size: 3.5rem;
   line-height: 1.2;
   font-weight: 800;
+  width: 100%;
+  word-break: normal;
+  word-wrap: normal;
+  hyphens: manual;
+  white-space: pre-wrap;
 }
 
 .titlePart {
-  display: block;
+  display: inline-block;
+  max-width: 100%;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
@@ -87,6 +94,7 @@
 }
 
 .ingress {
+  width: 100%;
   max-width: 800px;
   margin: 0;
   font-size: 1.25rem;
@@ -96,6 +104,9 @@
   transition: opacity 1s ease, transform 1s ease;
   transition-delay: 0.2s;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  hyphens: manual;
 }
 
 .ingress.visible {
@@ -160,16 +171,31 @@
 @media (min-width: 768px) {
   .title {
     font-size: 4.5rem;
+    word-break: normal;
   }
   
   .titleContainer {
-    width: 70%;
+    width: 90%;
   }
 }
 
 @media (min-width: 1024px) {
   .title {
     font-size: 5.5rem;
+  }
+  
+  .contentWrapper {
+    padding: 0 4rem;
+  }
+  
+  .titleContainer {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .title {
+    font-size: 6rem;
   }
 }
 

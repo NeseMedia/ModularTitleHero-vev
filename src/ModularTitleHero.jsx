@@ -17,10 +17,10 @@ const BottomWave = ({ color = '#ffffff' }) => (
 );
 
 const ModularTitleHero = ({
-  titlePart1 = 'Denne tjenesten',
-  titlePart2 = 'revolusjonerer',
-  titlePart3 = 'reisehverdagen for bedrifter',
-  ingress = 'For innkjøpsorganisasjonen Agrikjøp er god kontroll på forretningsreiser et viktig ansvar. Med nærmere 60.000 ansatte i medlemsbedrifter som Tine, Nortura og Felleskjøpet, blir det mange reiser å holde styr på.',
+  titlePart1 = '',
+  titlePart2 = '',
+  titlePart3 = '',
+  ingress = '',
   heroImage = null,
   backgroundTypeNumber = 0, // 0=gradient, 1=image
   showClouds = true,
@@ -89,6 +89,7 @@ const ModularTitleHero = ({
 
   // Konverterer linjeskift til <br /> elementer
   const formatWithLineBreaks = (text) => {
+    if (!text) return null;
     return text.split('\n').map((line, index, array) => 
       index === array.length - 1 ? line : (
         <React.Fragment key={index}>
@@ -150,6 +151,18 @@ const ModularTitleHero = ({
     return cloudArray;
   }
 
+  const renderTitlePart = (text, className, style) => {
+    if (!text) return null;
+    return (
+      <span 
+        className={className}
+        style={style}
+      >
+        {text}
+      </span>
+    );
+  };
+
   return (
     <section 
       className={`${styles.heroContainer} ${showBottomWave ? styles.hasBottomWave : ''}`}
@@ -184,31 +197,30 @@ const ModularTitleHero = ({
       <div className={styles.contentWrapper}>
         <div className={styles.titleContainer}>
           <h1 className={styles.title}>
-            <span 
-              className={`${styles.titlePart} ${titleVisible.part1 ? styles.visible : ''} ${styles.fromLeft}`}
-              style={{ color: textColor }}
-            >
-              {titlePart1}
-            </span>
-            <span 
-              className={`${styles.titlePart} ${titleVisible.part2 ? styles.visible : ''} ${styles.fromRight}`}
-              style={{ color: accentColor }}
-            >
-              {titlePart2}
-            </span>
-            <span 
-              className={`${styles.titlePart} ${titleVisible.part3 ? styles.visible : ''} ${styles.fromBottom}`}
-              style={{ color: textColor }}
-            >
-              {titlePart3}
-            </span>
+            {renderTitlePart(
+              titlePart1,
+              `${styles.titlePart} ${titleVisible.part1 ? styles.visible : ''} ${styles.fromLeft}`,
+              { color: textColor }
+            )}
+            {renderTitlePart(
+              titlePart2,
+              `${styles.titlePart} ${titleVisible.part2 ? styles.visible : ''} ${styles.fromRight}`,
+              { color: accentColor }
+            )}
+            {renderTitlePart(
+              titlePart3,
+              `${styles.titlePart} ${titleVisible.part3 ? styles.visible : ''} ${styles.fromBottom}`,
+              { color: textColor }
+            )}
           </h1>
-          <p 
-            className={`${styles.ingress} ${titleVisible.ingress ? styles.visible : ''}`}
-            style={{ color: textColor }}
-          >
-            {formatWithLineBreaks(ingress)}
-          </p>
+          {ingress && (
+            <p 
+              className={`${styles.ingress} ${titleVisible.ingress ? styles.visible : ''}`}
+              style={{ color: textColor }}
+            >
+              {formatWithLineBreaks(ingress)}
+            </p>
+          )}
         </div>
       </div>
       
@@ -232,21 +244,21 @@ registerVevComponent(ModularTitleHero, {
       name: 'titlePart1',
       type: 'string',
       title: 'Tittel del 1',
-      initialValue: 'Denne tjenesten',
+      initialValue: '',
       group: 'contentGroup',
     },
     {
       name: 'titlePart2',
       type: 'string',
       title: 'Tittel del 2',
-      initialValue: 'revolusjonerer',
+      initialValue: '',
       group: 'contentGroup',
     },
     {
       name: 'titlePart3',
       type: 'string',
       title: 'Tittel del 3',
-      initialValue: 'reisehverdagen for bedrifter',
+      initialValue: '',
       group: 'contentGroup',
     },
     {
@@ -256,7 +268,7 @@ registerVevComponent(ModularTitleHero, {
       options: {
         multiline: true
       },
-      initialValue: 'For innkjøpsorganisasjonen Agrikjøp er god kontroll på forretningsreiser et viktig ansvar. Med nærmere 60.000 ansatte i medlemsbedrifter som Tine, Nortura og Felleskjøpet, blir det mange reiser å holde styr på.',
+      initialValue: '',
       group: 'contentGroup',
     },
     
